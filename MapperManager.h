@@ -1,9 +1,9 @@
 #pragma once
 
 #include "Common.h"
+#include "IResultMapper.h"
 #include "DefaultResultsMapper.h"
 
-typedef DefaultResultsMapper IResultMapper; // TODO: Hack, create interface for this
 typedef uint32_t MapperToken;
 
 typedef std::map<MapperToken, IResultMapper*> ResultMappersMap;

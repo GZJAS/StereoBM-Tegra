@@ -1,10 +1,10 @@
 #pragma once
 
 #include "Common.h"
-#include "IPoolable.h"
 #include "Task.h"
+#include "IResultMapper.h"
 
-class DefaultResultsMapper : public IPoolable<Task*>
+class DefaultResultsMapper : public IResultMapper
 {
 private:
 	const char* LogModule = CLASS_NAME;
