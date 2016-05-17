@@ -2,6 +2,7 @@
 #include "Task.h"
 #include "RunnerManager.h"
 #include "MapperManager.h"
+#include "Stopwatch.h"
 
 int main()
 {
