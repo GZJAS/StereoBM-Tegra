@@ -12,5 +12,7 @@ private:
 public:
 	void StartPooling() override;
 
+	void Destroy() override;
+
 	void MapResult(Task* task);
 };

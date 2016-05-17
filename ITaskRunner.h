@@ -6,6 +6,4 @@ class Task;
 
 class ITaskRunner : public IPoolable<Task*>
 {
-public:
-	//TaskManager* Manager;
 };

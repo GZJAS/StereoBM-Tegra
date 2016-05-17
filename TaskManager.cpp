@@ -25,8 +25,14 @@ void TaskManager::Stop()
 
 void TaskManager::StartPooling()
 {
+	Log::WriteThreadSafe(LogModule, "Is started pooling. Pres ENTER to quit.");
+
 	while (!this->IsStopRequested)
 	{
+		if (std::cin.get() == '\n')
+		{
+			this->Stop();
+		}
 	}
 }
 

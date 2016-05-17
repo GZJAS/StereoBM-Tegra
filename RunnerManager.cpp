@@ -36,6 +36,9 @@ void RunnerManager::DestroyRunner(const RunnerToken token)
 	ITaskRunner* runner = this->Runners[token];
 
 	CHECK_PTR(runner);
+
+	runner->Destroy();
+
 	CHECK_MAP_ERASE(this->Runners.erase(token));
 	SAFE_DELETE(runner);
 

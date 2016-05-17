@@ -15,6 +15,11 @@ void DefaultResultsMapper::StartPooling()
 	}
 }
 
+void DefaultResultsMapper::Destroy()
+{
+	this->IsRunning = false;
+}
+
 void DefaultResultsMapper::MapResult(Task* task)
 {
 	TaskPayload payload = task->Payload;

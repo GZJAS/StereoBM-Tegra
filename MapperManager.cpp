@@ -45,6 +45,9 @@ void MapperManager::DestroyMapper(const MapperToken token)
 	IResultMapper* mapper = this->Mappers[token];
 
 	CHECK_PTR(mapper);
+
+	mapper->Destroy();
+
 	CHECK_MAP_ERASE(this->Mappers.erase(token));
 	SAFE_DELETE(mapper);
 

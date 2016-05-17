@@ -7,11 +7,13 @@ class IPoolable
 {
 protected:
 	AtomicQueue<T> Queue;
-	volatile bool IsRunning = false;
+	volatile bool IsRunning : 1;
 
 public:
-	void Insert(T item) { this->Queue.push(item); }
-	virtual void StartPooling() {};
-	virtual void Destroy() {};
+	IPoolable() { this->IsRunning = false; }
 	virtual ~IPoolable() {};
+
+	void Insert(T item) { this->Queue.push(item); }
+	virtual void StartPooling() { this->IsRunning = true; };
+	virtual void Destroy() { this->IsRunning = false; };
 };
